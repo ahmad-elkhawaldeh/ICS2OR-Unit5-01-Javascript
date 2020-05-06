@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> my webpage </title>
+    <meta charset="utf-8">
+    <meta name="descirption" content="webpage, with buttons ">
+    <meta name="keywords" content="Mths,website">
+    <meta name="author" content="Ahmad-El-khawaldeh">
+    <meta name="viewport" content="width=device-width,intial-scale1.0">
+   </head>
+    <p> please pick a number from 1-6 </p>
+        <input type="text" id="abc" value="">
+       <button onclick="myfunction()"> enter </button>
+    
+       <script>
+      function myfunction()
+       let usernumber=6;
+       let randomnumber=Math.floor(Math.random()* usernumber) + 1;
+       let attempts ;
+       let counter = 0;
+       let maxtries= 5;
+        
+        
+          
+      while ( attempts !=randomnumber) {
+         let attempts = document.getElementById("abc").value (" please pick a number between 1 and " + usernumber);
+        let counter += 1;
+      }
+      
+      if (counter > maxtries )   {
+        document.getElementById("abc").value ("you have no more tries left. press F5 to play again") ;
+        break
+      }
+      
+      if (attempts == randomnumber) {
+          alert(" congrats you have the correct number !!");
+          alert(" <p> the randomnumber was " + randomnumber+ "</p>");
+          alert (" <p> it took you " + counter + " attempts to get the right number  </p>");
+         
+         
+      }
+        
+      
+        
+        
+      </script>
+     
+    
