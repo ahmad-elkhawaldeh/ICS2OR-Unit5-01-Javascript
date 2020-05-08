@@ -8,41 +8,38 @@
     <meta name="author" content="Ahmad-El-khawaldeh">
     <meta name="viewport" content="width=device-width,intial-scale1.0">
    </head>
-    <p> please pick a number from 1-6 </p>
+       <body>
+        please pick a number from 1-6 
         <input type="text" id="abc" value="">
        <button onclick="myfunction()"> enter </button>
-    
+        </body>
        <script>
-      function myfunction()
        let usernumber=6;
+       let tries  = 0;
+       let maxtries= 3;
        let randomnumber=Math.floor(Math.random()* usernumber) + 1;
-       let attempts ;
-       let counter = 0;
-       let maxtries= 5;
+        console.log(randomnumber);
+        function myfunction() {
+        let input = parseInt(document.getElementById("abc").value);
         
-        
-          
-      while ( attempts !=randomnumber) {
-         let attempts = document.getElementById("abc").value (" please pick a number between 1 and " + usernumber);
-        let counter += 1;
-      }
+
       
-      if (counter > maxtries )   {
-        document.getElementById("abc").value ("you have no more tries left. press F5 to play again") ;
-        break
-      }
-      
-      if (attempts == randomnumber) {
+      if (tries > maxtries )   {
+        alert("you have no more tries left. press F5 to play again") ;
+      } else {
+        if (randomnumber === input) {
           alert(" congrats you have the correct number !!");
           alert(" <p> the randomnumber was " + randomnumber+ "</p>");
-          alert (" <p> it took you " + counter + " attempts to get the right number  </p>");
-         
-         
-      }
-        
+          alert (" <p> it took you " + tries + " attempts to get the right number  </p>");
+        }   else {
+        alert(" please pick a number between 1 and " + usernumber);
+        tries++;
+      }  
+       }
+        }
       
-        
-        
-      </script>
      
+       </script>   
+      
     
+     
